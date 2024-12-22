@@ -1,0 +1,197 @@
+@import url('https://fonts.cdnfonts.com/css/general-sans');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #010103;
+  font-family: 'General Sans', sans-serif;
+}
+
+@layer utilities {
+  .c-space {
+    @apply px-5 sm:px-10;
+  }
+
+  .head-text {
+    @apply font-semibold text-3xl text-gray_gradient sm:text-4xl;
+  }
+
+  .nav-ul {
+    @apply relative z-20 flex sm:flex-row flex-col items-center gap-4 md:gap-6;
+  }
+
+  .nav-li {
+    @apply max-sm:hover:bg-black-500 max-sm:px-5 py-2 max-sm:rounded-md max-sm:w-full font-generalsans text-neutral-400 hover:text-white;
+  }
+
+  .nav-li_a {
+    @apply text-lg md:text-base hover:text-white transition-colors;
+  }
+
+  .nav-sidebar {
+    @apply block right-0 left-0 z-20 absolute sm:hidden bg-black-200 backdrop-blur-sm mx-auto transition-all duration-300 overflow-hidden ease-in-out;
+  }
+
+  .text-gray_gradient {
+    @apply bg-clip-text bg-gradient-to-r from-[#BEC1CF] from-60% via-[#D5D8EA] via-60% to-[#D5D8EA] to-100% text-transparent;
+  }
+
+  /* button component */
+  .btn {
+    @apply flex justify-center items-center gap-4 bg-black-300 mx-auto p-3 rounded-md text-white transition-all cursor-pointer active:scale-95;
+  }
+
+  .btn-ping {
+    @apply inline-flex absolute bg-green-400 opacity-75 rounded-full w-full h-full animate-ping;
+  }
+
+  .btn-ping_dot {
+    @apply inline-flex relative bg-green-500 rounded-full w-3 h-3;
+  }
+
+  /* hero section */
+  .hero_tag {
+    @apply font-black font-generalsans text-3xl text-center md:text-4xl lg:text-5xl xl:text-6xl !leading-normal;
+  }
+
+  /* about section */
+  .grid-container {
+    @apply flex flex-col gap-5 bg-black-200 p-4 sm:p-7 border border-black-300 rounded-lg w-full h-full;
+  }
+
+  .grid-headtext {
+    @apply mb-2 font-generalsans font-semibold text-white text-xl;
+  }
+
+  .grid-subtext {
+    @apply font-generalsans text-[#afb0b6] text-base;
+  }
+
+  .copy-container {
+    @apply flex justify-center items-center gap-2 cursor-pointer;
+  }
+
+  /* projects section  */
+  .arrow-btn {
+    @apply p-3 rounded-full arrow-gradient w-10 h-10 transition-all cursor-pointer active:scale-95;
+  }
+
+  .tech-logo {
+    @apply flex justify-center items-center bg-neutral-100 bg-opacity-10 backdrop-blur-lg backdrop-filter p-2 rounded-md w-10 h-10;
+  }
+
+  /* clients section */
+  .client-container {
+    @apply gap-5 grid grid-cols-1 md:grid-cols-2 mt-12;
+  }
+
+  .client-review {
+    @apply col-span-1 bg-black-300 bg-opacity-50 p-5 md:p-10 rounded-lg;
+  }
+
+  .client-content {
+    @apply flex lg:flex-row flex-col justify-between items-start lg:items-center gap-5 mt-7;
+  }
+
+  /*  work experience section */
+  .work-container {
+    @apply gap-5 grid grid-cols-1 lg:grid-cols-3 mt-12;
+  }
+
+  .work-canvas {
+    @apply col-span-1 bg-black-200 border border-black-300 rounded-lg;
+  }
+
+  .work-content {
+    @apply col-span-2 bg-black-200 border border-black-300 rounded-lg;
+  }
+
+  .work-content_container {
+    @apply items-start gap-5 grid grid-cols-[auto_1fr] hover:bg-black-300 px-2.5 sm:px-5 rounded-lg transition-all duration-500 cursor-pointer ease-in-out;
+  }
+
+  .work-content_logo {
+    @apply bg-black-600 p-2 rounded-3xl w-16 h-16;
+  }
+
+  .work-content_bar {
+    @apply group-hover:bg-black-500 flex-1 group-last:hidden bg-black-300 mt-4 w-0.5 h-full;
+  }
+
+  /* contact section */
+  .contact-container {
+    @apply relative z-10 mt-12 px-5 sm:px-10 max-w-xl;
+  }
+
+  .field-label {
+    @apply text-lg text-white-600;
+  }
+
+  .field-input {
+    @apply bg-black-300 shadow-2xl shadow-black-200 px-5 py-2 rounded-lg w-full min-h-14 text-lg text-white-800 placeholder:text-white-500 focus:outline-none;
+  }
+
+  .field-btn {
+    @apply flex justify-center items-center gap-3 bg-black-500 shadow-2xl shadow-black-200 px-5 py-2 rounded-lg min-h-12 text-lg text-white;
+  }
+
+  .field-btn_arrow {
+    @apply brightness-0 w-2.5 h-2.5 invert object-contain;
+  }
+
+  /*  footer */
+  .social-icon {
+    @apply flex justify-center items-center bg-black-300 border border-black-200 rounded-full w-12 h-12;
+  }
+}
+
+.waving-hand {
+  animation-name: wave-animation;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  transform-origin: 70% 70%;
+  display: inline-block;
+}
+
+.arrow-gradient {
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.1) 10%,
+    rgba(255, 255, 255, 0.000025) 50%,
+    rgba(255, 255, 255, 0.000025) 50%,
+    rgba(255, 255, 255, 0.025) 100%
+  );
+}
+
+@keyframes wave-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  15% {
+    transform: rotate(14deg);
+  }
+  30% {
+    transform: rotate(-8deg);
+  }
+  40% {
+    transform: rotate(14deg);
+  }
+  50% {
+    transform: rotate(-4deg);
+  }
+  60% {
+    transform: rotate(10deg);
+  }
+  70% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
