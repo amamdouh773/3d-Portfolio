@@ -23,7 +23,8 @@ const Navbar = () => {
       <div className='mx-auto max-w-7xl'>
         <div className='flex justify-between items-center mx-auto py-5 c-space'>
           <a href='/'>
-            <img src='assets/Ahmed-logo.png' alt='logo' className='w-24 h-24' />
+            <img src='assets/Ahmed-logo.png' alt='logo' className='w-12 h-12' />
+            <p className='text-white'>Ahmed</p>
           </a>
           <button
             onClick={toggleMenu}

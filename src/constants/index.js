@@ -244,19 +244,20 @@ export const navLinks = [
         },
       ],
     },
+    
   ];
   
-  export const calculateSizes = (isSmall, isMobile, isTablet) => {
+  export const calculateSizes = (isSmall, isMobile, isTablet,isLaptop) => {
     return {
-      deskScale: isSmall ? 0.04 : isMobile ? 0.06 : 0.062,
-      deskPosition: isMobile ? [0.5, -4.5, 0] : isTablet ? [0.5, -5.5 ,0] : [0.25, -5.5, 0],
-      cubePosition: isSmall ? [3, -7, 0] : isMobile ? [7, -5, 0] : isTablet ? [8, -5, 0] : [9, -7.2, 0],
-      cubeScale: isMobile ? 0.5 : isTablet ? 0.8 : 0.9,
-      reactLogoPosition: isSmall ? [2, 4, 0] : isMobile ? [5, 4, 0] : isTablet ? [5, 4, 0] : [10, 3, 0],
+      deskScale: isSmall? 0.06: isMobile ? 0.07: isTablet ? 0.075  : 0.09,
+      deskPosition: isSmall ? [0.1, -5, -10]: isMobile ?  [0.1, -6, -10]: isTablet ? [0.1, -7, -10]:  [0.1, -7, -10],
+      cubePosition: isSmall ? [3, -7, 0] : isMobile ? [3, -7, 0] : isTablet ? [5, -6, 0] : [9, -7.2, 0],
+      cubeScale: isMobile ? 0.5 : isTablet ? 0.6 : 0.8,
+      reactLogoPosition: isSmall ? [2, 4, 0] : isMobile ? [2, 4, 0] : isTablet ? [2, 6, 0] : isLaptop? [7, 6, 0]:[10, 7, 0],
       reactLogoScale: isMobile ? 0.3 : 0.4,
-      ringPosition: isSmall ? [-5, 4, 0] : isMobile ? [-15, 0, 0] : isTablet ? [-15, 0, 0] : [-24,4, 0],
-      ringScale: isSmall ? 0.2 : isMobile ? 0.7 : 0.8,
-      targetPosition: isSmall? [-3,-7,0]:isMobile? [-6,-7,0]:[-7,-8,0],
+      ringPosition: isSmall ? [-10, 4, 0] : isMobile ? [-12, 6, 0] : isTablet ? [-10, 5, 0] : isLaptop ?[-16,7, 0]:[-23,7, 0],
+      ringScale: isSmall ? 0.3 : isMobile ? 0.3 : isTablet? 0.4: 0.6,
+      targetPosition: isSmall? [-3,-7,0]:isMobile? [-3,-7,0]: isTablet?[-5,-7,0]: [-7,-7,0],
       targetScale:  0.8,
     };
   };
@@ -264,29 +265,11 @@ export const navLinks = [
   export const workExperiences = [
     {
       id: 1,
-      name: 'Framer',
-      pos: 'Lead Web Developer',
-      duration: '2022 - Present',
-      title: "Framer serves as my go-to tool for creating interactive prototypes. I use it to bring designs to  life, allowing stakeholders to experience the user flow and interactions before development.",
-      icon: '/assets/framer.svg',
-      animation: 'victory',
-    },
-    {
-      id: 2,
-      name: 'Figma',
+      name: 'Share',
       pos: 'Web Developer',
-      duration: '2020 - 2022',
-      title: "Figma is my collaborative design platform of choice. I utilize it to work seamlessly with team members and clients, facilitating real-time feedback and design iterations. Its cloud-based.",
-      icon: '/assets/figma.svg',
-      animation: 'clapping',
-    },
-    {
-      id: 3,
-      name: 'Notion',
-      pos: 'Junior Web Developer',
-      duration: '2019 - 2020',
-      title: "Notion helps me keep my projects organized. I use it for project management, task tracking, and as a central hub for documentation, ensuring that everything from design notes to.",
-      icon: '/assets/notion.svg',
-      animation: 'salute',
+      duration: 'May 2024 - Present',
+      title: "Share is a multimedia and advertising agency", 
+      icon: '/assets/share-logo.png',
+      animation: 'breath',
     },
   ];
